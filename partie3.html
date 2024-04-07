@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine le Nombre</title>
+</head>
+<body>
+    <script>
+        // Génération du nombre aléatoire entre 1 et 100
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+function checkGuess() {
+    // Récupération de la valeur saisie par l'utilisateur
+    const userGuess = parseInt(document.getElementById('guessInput').value);
+
+    // Vérification si la saisie est un nombre valide
+    if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+        document.getElementById('feedback').innerText = "Veuillez entrer un nombre entre 1 et 100.";
+        return;
+    }
+
+    // Comparaison avec le nombre aléatoire
+    if (userGuess === randomNumber) {
+        document.getElementById('feedback').innerText = "Bravo ! Vous avez deviné le nombre correctement.";
+    } else if (userGuess < randomNumber) {
+        document.getElementById('feedback').innerText = "Le nombre est trop petit. Essayez encore !";
+    } else {
+        document.getElementById('feedback').innerText = "Le nombre est trop grand. Essayez encore !";
+    }
+}
+
+    </script>
+    <div class="container">
+        <h1>Devine le Nombre (entre 1 et 100)</h1>
+        <input type="text" id="guessInput" placeholder="Entrez votre proposition">
+        <button onclick="checkGuess()">Vérifier</button>
+        <div id="feedback"></div>
+    </div>
+</body>
+</html>

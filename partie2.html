@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="showContactForm()">Formulaire de Contact</button>
+        <button onclick="showPresentationVideo()">Vidéo de Présentation</button>
+        <button onclick="showPhotos()">Photos</button>
+        <button onclick="showCV()">CV</button>
+    </div>
+
+    <div class="popup" id="contactForm">
+        <form >
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom.." required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Votre email.." required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Votre message.." style="height:100px" required></textarea>
+
+            <input type="submit" value="Envoyer">
+        </form>
+       
+        <button onclick="hideContactForm()">Fermer</button>
+    </div>
+
+    <div class="presentation-video" id="presentationVideo">
+        <!-- Vidéo de présentation -->
+        <video controls>
+            <source src="./Happy ( WE ARE FROM TATOOINE).mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <button onclick="hidePresentationVideo()">Fermer</button>
+    </div>
+
+    <div class="photos" id="photos">
+        <!-- Photos -->
+        <img src="./1.jpg" alt="Photo de vous et de votre binôme">
+        <button onclick="hidePhotos()">Fermer</button>
+    </div>
+    <div id="cv" class="cv">
+    <img src="./modele-cv-iconic.png" width="80%" height="100%"></iframe>
+    <button onclick="hideCV()">Fermer</button>
+</div>
+<script>
+    function showContactForm() {
+    document.getElementById('contactForm').style.display = 'block';
+}
+
+function hideContactForm() {
+    document.getElementById('contactForm').style.display = 'none';
+}
+
+function showPresentationVideo() {
+    document.getElementById('presentationVideo').style.display = 'block';
+}
+
+function hidePresentationVideo() {
+    document.getElementById('presentationVideo').style.display = 'none';
+}
+
+function showPhotos() {
+    document.getElementById('photos').style.display = 'block';
+}
+
+function hidePhotos() {
+    document.getElementById('photos').style.display = 'none';
+}
+
+function showCV() {
+    document.getElementById('cv').style.display = 'block';
+}
+function hideCV() {
+    document.getElementById('cv').style.display = 'none';
+}
+</script>
+<style>
+    .popup, .presentation-video, .photos, .cv {
+    display: none;
+    
+    
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    };
+</style>
+</body>
+</html>

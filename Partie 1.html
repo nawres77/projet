@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="image" src="./allumer.png" alt="Image 1" width="355px" height="500px" >
+<button >allumer</button>
+<script>
+   b=document.querySelector('button')
+   
+   b.addEventListener('click', function () {
+        var img = document.getElementById("image");
+        var currentSrc = img.getAttribute("src");
+        if (currentSrc == "allumer.png") {
+            img.setAttribute("src", "fermer.png");
+            img.setAttribute("alt", "fermer.png");
+            b.textContent="eteindre";
+            son= new Audio('clap.mp3')
+                son.play()
+        } else {
+            img.setAttribute("src", "allumer.png");
+            img.setAttribute("alt", "allumer.png");
+            b.textContent="allumer";
+            son= new Audio('clap.mp3')
+                son.play()
+        }
+    })
+</script>
+
+</body>
+</html>
